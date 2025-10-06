@@ -27,4 +27,9 @@ export const saveSurveySubmission = async () => {
     
      // Send the data to the API
     const response = await fetch("http://localhost:8088/submissions", postOptions)
+
+
+    // Dispatch a custom event when the submission is complete
+    const newSubmissionEvent = new CustomEvent("newSubmissionCreated")
+    document.dispatchEvent(newSubmissionEvent)
 }
