@@ -25,5 +25,6 @@ export const saveSurveySubmission = async () => {
         body: JSON.stringify(transientState)
     }
     
-    // TODO: Add fetch() call here
+     // Send the data to the API
+    const response = await fetch("http://localhost:8088/submissions", postOptions)
 }
